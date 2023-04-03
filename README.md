@@ -246,9 +246,9 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
                [Main Page](https://aroussi.com/post/python-yahoo-finance),
                [Reference](https://pypi.org/project/yfinance/)
 
-### II.  Backtest Settings & Results
+### II.  Backtest Results & Discussions
 
-   1.  Backtest Settings
+   1.  Backtest Results
 
        -   High Level Overview
 
@@ -269,27 +269,33 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
            -   Capital is split 50:50 between System 1 and System 2
 
-   2.  Backtest Results
+       -   Testing Results
+
 
 ![Use this template](https://github.com/erikpham95/Turtle-Trading-Backtest/blob/main/Pic/Pic1.png)
 
 ![Use this template](https://github.com/erikpham95/Turtle-Trading-Backtest/blob/main/Pic/Pic2.png)
 
-   -   Key Observations
 
-      -   Turtle Trading outperform SPY from 2000-2010, but underperform
-          from 2010-2023
+   2.  Discussions
 
-      -   Turtle Trading have much lower volatility & maximum drawdown
+       -   Key Observations
 
-      -   "Fundamentalist" may argue that the FED's QE have a great effect
-          in boosting the return of SPY from 2010 onwards
+           -   Turtle Trading outperform SPY from 2000-2010, but underperform from 2010-2023        
+               
+           -   Turtle Trading have much lower volatility & maximum drawdown
+               
+           -   “Fundamentalist” may argue that the FED’s QE have a great effect in boosting the return of SPY from 2010 onwards 
+        
+       -   Further Analysis / Fine Tune
 
-   -   Further Analysis / Fine Tune
+           -   Tickers to track can include other individual stocks / ETF
+               
+           -   Fundamental Analysis can be incorporated to select better candidates
+               
+           -  System parameters can be adjusted and observe performance 
 
-      -   Tickers to track can include other individual stocks / ETF
 
-      -   Fundamental Analysis can be incorporated to select better
-          candidates
 
-      -   System parameters can be adjusted and observe performance
+
+
