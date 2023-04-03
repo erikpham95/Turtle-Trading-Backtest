@@ -246,9 +246,9 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
                [Main Page](https://aroussi.com/post/python-yahoo-finance),
                [Reference](https://pypi.org/project/yfinance/)
 
-### II.  Backtest Results & Discussions
+### II.  Backtest Setups, Results & Discussions
 
-   1.  Backtest Results
+   1.  Backtest Setups & Results
 
        -   High Level Overview
 
