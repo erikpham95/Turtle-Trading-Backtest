@@ -47,9 +47,9 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
          -   [Case Study: Complete Guide On Turtle Trading System](https://www.youtube.com/watch?v=kBstdk-_kb8&ab_channel=TheVIXGuy)
 
-### 2.  Trading System Breakdown
+### II.  Trading System Breakdown
 
-    *  Position Sizing
+    1.  Position Sizing
 
         -   Sizing based on Volatility -- Constant Percentage Risk
 
@@ -123,7 +123,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
             -   Account is adjusted for every 10% up / down
 
-    *  Trade Entries & Exposure Adjustment
+    2.  Trade Entries & Exposure Adjustment
 
         -   Trade Entries
 
@@ -146,7 +146,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
             -   Continue until max position size is reached
 
-    *  Stop Loss & Profit Taking
+    3.  Stop Loss & Profit Taking
 
         -   Stop Loss
 
@@ -163,11 +163,11 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
             -   System 2 -- Exit Long (Short) position at 20-day low
                 (high)
 
-## II. Turtle Trading -- Backtest Implementation
+## Turtle Trading -- Backtest Implementation
 
-### 1.  Python Pre-requisites
+### I.  Python Pre-requisites
 
-    *  Python Programing Concepts & Tools
+    1.  Python Programing Concepts & Tools
 
         -   Python 101
 
@@ -207,7 +207,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
                 [Cheatsheet](https://blog.ja-ke.tech/assets/jupyterlab-shortcuts/Shortcuts.png),
                 [Reference](https://jupyterla*readthedocs.io/en/stable/)
 
-    *  Python Libraries
+    2.  Python Libraries
 
         -   Data Manipulation
 
@@ -245,9 +245,9 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
                 [Main Page](https://aroussi.com/post/python-yahoo-finance),
                 [Reference](https://pypi.org/project/yfinance/)
 
-### 2.  Backtest Settings & Results
+### II.  Backtest Settings & Results
 
-    *  Backtest Settings
+    1.  Backtest Settings
 
         -   High Level Overview
 
@@ -268,7 +268,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
             -   Capital is split 50:50 between System 1 and System 2
 
-    *  Backtest Results
+    2.  Backtest Results
 
 > ![](media/image1.png){width="5.409159011373578in"
 > height="3.5976640419947508in"}
