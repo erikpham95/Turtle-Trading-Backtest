@@ -275,21 +275,21 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
 ![Use this template](https://github.com/erikpham95/Turtle-Trading-Backtest/blob/main/Pic/Pic2.png)
 
--   Key Observations
+      -   Key Observations
 
-   -   Turtle Trading outperform SPY from 2000-2010, but underperform
-       from 2010-2023
+         -   Turtle Trading outperform SPY from 2000-2010, but underperform
+             from 2010-2023
 
-   -   Turtle Trading have much lower volatility & maximum drawdown
+         -   Turtle Trading have much lower volatility & maximum drawdown
 
-   -   "Fundamentalist" may argue that the FED's QE have a great effect
-       in boosting the return of SPY from 2010 onwards
+         -   "Fundamentalist" may argue that the FED's QE have a great effect
+             in boosting the return of SPY from 2010 onwards
 
--   Further Analysis / Fine Tune
+      -   Further Analysis / Fine Tune
 
-   -   Tickers to track can include other individual stocks / ETF
+         -   Tickers to track can include other individual stocks / ETF
 
-   -   Fundamental Analysis can be incorporated to select better
-       candidates
+         -   Fundamental Analysis can be incorporated to select better
+             candidates
 
-   -   System parameters can be adjusted and observe performance
+         -   System parameters can be adjusted and observe performance
