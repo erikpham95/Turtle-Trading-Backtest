@@ -262,7 +262,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
            -   Dividends were not included.
 
-       -   Notes
+       -   Practical Notes
 
            -   For System 1, ignore the breakout if the last
                breakout led to a winning trade
