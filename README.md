@@ -83,6 +83,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
            portfolio of C = \$100,000
 
            -   N = 2.5, f = 0.02, r = 1
+           -   The no. of shares to purchase will be
 
        ```math 
        U = floor\left( \frac{0.02*100,000}{1*2.5*150} \right) = floor\left( 5.33 \right) = 5\ shares 
