@@ -1,7 +1,7 @@
 # Turtle-Trading-Backtest
 This is a beginner's guideline for using Python to backtest Turtle Trading (or any other automated trading) strategy
 
-I.  Turtle Trading System Explained
+## I.  Turtle Trading System Explained
 
 1.  General
 
@@ -163,7 +163,7 @@ I.  Turtle Trading System Explained
             -   System 2 -- Exit Long (Short) position at 20-day low
                 (high)
 
-II. Turtle Trading -- Backtest Implementation
+## II. Turtle Trading -- Backtest Implementation
 
 1.  Python Pre-requisites
 
