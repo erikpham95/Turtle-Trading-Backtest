@@ -5,47 +5,47 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
 ### 1.  General
 
-    *  Introduction
+ a.  Introduction
 
-        -   Key Takeaways
+     -   Key Takeaways
 
-            -   Turtle is a nickname given to a group of traders who
-                were part of an experiment in 1983.
+         -   Turtle is a nickname given to a group of traders who
+             were part of an experiment in 1983.
 
-            -   The experiment was run by Richard Dennis and Bill
-                Eckhardt, who wanted to test if successful trading
-                could be taught to novices.
+         -   The experiment was run by Richard Dennis and Bill
+             Eckhardt, who wanted to test if successful trading
+             could be taught to novices.
 
-            -   Dennis and Eckhardt taught the turtles a trading
-                system that resulted in very positive results among
-                the study participants.
+         -   Dennis and Eckhardt taught the turtles a trading
+             system that resulted in very positive results among
+             the study participants.
 
-            -   Some traders continue to use their trading system,
-                or version of it, to this day.
+         -   Some traders continue to use their trading system,
+             or version of it, to this day.
 
-        -   Related Concepts
+     -   Related Concepts
 
-            - [Trend Following Strategy](https://www.investopedi*com/terms/t/trendtrading.asp)
+         - [Trend Following Strategy](https://www.investopedi*com/terms/t/trendtrading.asp)
 
-            - [Donchian Channel](https://www.investopedi*com/terms/d/donchianchannels.asp)
+         - [Donchian Channel](https://www.investopedi*com/terms/d/donchianchannels.asp)
 
-            - [Average True Range](https://www.investopedi*com/terms/a/atr.asp)
+         - [Average True Range](https://www.investopedi*com/terms/a/atr.asp)
 
-    *  Reference
+ b.  Reference
 
-        -   Briefings
+     -   Briefings
 
-            -   [Turtle Trading: A Market Legend](https://www.investopedi*com/articles/trading/08/turtle-trading.asp)
+         -   [Turtle Trading: A Market Legend](https://www.investopedi*com/articles/trading/08/turtle-trading.asp)
 
-            -   [How Strangers Made \$175 Million With This](https://www.youtube.com/watch?v=-Yt1hOfKrYY&ab_channel=TRADINGRUSH)
+         -   [How Strangers Made \$175 Million With This](https://www.youtube.com/watch?v=-Yt1hOfKrYY&ab_channel=TRADINGRUSH)
 
-            -   [The Complete Turtle Trader by Michael Covel.(Richard Dennis)](https://www.youtube.com/watch?v=NJkXSZUHl1g&ab_channel=FinancialWisdom)
+         -   [The Complete Turtle Trader by Michael Covel.(Richard Dennis)](https://www.youtube.com/watch?v=NJkXSZUHl1g&ab_channel=FinancialWisdom)
 
-        -   Detailed Breakdown
+     -   Detailed Breakdown
 
-            -   [Original Turtle Rules](https://bigpicture.typepad.com/comments/files/turtlerules.pdf)
+         -   [Original Turtle Rules](https://bigpicture.typepad.com/comments/files/turtlerules.pdf)
 
-            -   [Case Study: Complete Guide On Turtle Trading System](https://www.youtube.com/watch?v=kBstdk-_kb8&ab_channel=TheVIXGuy)
+         -   [Case Study: Complete Guide On Turtle Trading System](https://www.youtube.com/watch?v=kBstdk-_kb8&ab_channel=TheVIXGuy)
 
 ### 2.  Trading System Breakdown
 
