@@ -3,7 +3,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
 ## I.  Turtle Trading System Explained
 
-1.  General
+### 1.  General
 
     *  Introduction
 
@@ -47,7 +47,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
             -   [Case Study: Complete Guide On Turtle Trading System](https://www.youtube.com/watch?v=kBstdk-_kb8&ab_channel=TheVIXGuy)
 
-2.  Trading System Breakdown
+### 2.  Trading System Breakdown
 
     *  Position Sizing
 
@@ -165,7 +165,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
 ## II. Turtle Trading -- Backtest Implementation
 
-1.  Python Pre-requisites
+### 1.  Python Pre-requisites
 
     *  Python Programing Concepts & Tools
 
@@ -245,7 +245,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
                 [Main Page](https://aroussi.com/post/python-yahoo-finance),
                 [Reference](https://pypi.org/project/yfinance/)
 
-2.  Backtest Settings & Results
+### 2.  Backtest Settings & Results
 
     *  Backtest Settings
 
