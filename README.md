@@ -270,11 +270,9 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
    2.  Backtest Results
 
-> ![](media/image1.png){width="5.409159011373578in"
-> height="3.5976640419947508in"}
->
-> ![](media/image2.png){width="5.705521653543307in"
-> height="0.6171073928258968in"}
+![Use this template](https://github.com/erikpham95/Turtle-Trading-Backtest/blob/main/Pic/Pic1.png)
+
+![Use this template](https://github.com/erikpham95/Turtle-Trading-Backtest/blob/main/Pic/Pic2.png)
 
 -   Key Observations
 
