@@ -1,11 +1,11 @@
 # Turtle-Trading-Backtest
 This is a beginner's guideline for using Python to backtest Turtle Trading (or any other automated trading) strategy
 
-## I.  Turtle Trading System Explained
+##  Turtle Trading System Explained
 
-### 1.  General
+### I.  General
 
- a.  Introduction
+ 1.  Introduction
 
      -   Key Takeaways
 
@@ -31,7 +31,7 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
          - [Average True Range](https://www.investopedi*com/terms/a/atr.asp)
 
- b.  Reference
+ 2.  Reference
 
      -   Briefings
 
