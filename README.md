@@ -49,226 +49,226 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
 ### II.  Trading System Breakdown
 
-    1.  Position Sizing
+   1.  Position Sizing
 
-        -   Sizing based on Volatility -- Constant Percentage Risk
+       -   Sizing based on Volatility -- Constant Percentage Risk
 
-            -   High (Low) Volatility = Small (Large) Position Size
+           -   High (Low) Volatility = Small (Large) Position Size
 
-            -   Aim = risk the same amount of dollar
+           -   Aim = risk the same amount of dollar
 
-        -   Sizing Formula:
-        ```math
-        U = floor \left( \frac{f*C}{r*N*P} \right)
-        ```
+       -   Sizing Formula:
+       ```math
+       U = floor \left( \frac{f*C}{r*N*P} \right)
+       ```
 
-        -   Parameter explanation
+       -   Parameter explanation
 
-            -   U = unit = no. of stocks to buy
+           -   U = unit = no. of stocks to buy
 
-            -   P = current price of the stock (so U\*P =
-                position size for this trade)
+           -   P = current price of the stock (so U\*P =
+               position size for this trade)
 
-            -   C = Result-Adjusted Amount of Capital (detailed
-                below)
+           -   C = Result-Adjusted Amount of Capital (detailed
+               below)
 
-            -   N = ATR (detailed below)
+           -   N = ATR (detailed below)
 
-            -   f = Capital Fraction -- usually set at 0.02
+           -   f = Capital Fraction -- usually set at 0.02
 
-            -   r = Risk Coefficient -- set to 1 (2) to small
-                (large) account size
+           -   r = Risk Coefficient -- set to 1 (2) to small
+               (large) account size
 
-        -   Example: Buy Apple shares (P = \$150) for a
-            portfolio of C = \$100,000
+       -   Example: Buy Apple shares (P = \$150) for a
+           portfolio of C = \$100,000
 
-            -   N = 2.5, f = 0.02, r = 1
+           -   N = 2.5, f = 0.02, r = 1
 
-        ```math 
-        U = floor\left( \frac{0.02*100,000}{1*2.5*150} \right) = floor\left( 5.33 \right) = 5\ shares 
-        ```
+       ```math 
+       U = floor\left( \frac{0.02*100,000}{1*2.5*150} \right) = floor\left( 5.33 \right) = 5\ shares 
+       ```
 
-        -   Sizing Limit
+       -   Sizing Limit
 
-            -   1 Market -- Max 5 Units (pyramid included)
+           -   1 Market -- Max 5 Units (pyramid included)
 
-            -   Single Direction (Long / Short) -- Max 12 Unit
+           -   Single Direction (Long / Short) -- Max 12 Unit
 
-        -   N = ATR value
+       -   N = ATR value
 
-            -   [ATR explanation & formula](https://www.investopedi*com/terms/a/atr.asp)
+           -   [ATR explanation & formula](https://www.investopedi*com/terms/a/atr.asp)
 
-            -   [Sample ATR Python implementation](https://www.learnpythonwithrune.org/calculate-the-average-true-range-atr-easy-with-pandas-dataframes/)
+           -   [Sample ATR Python implementation](https://www.learnpythonwithrune.org/calculate-the-average-true-range-atr-easy-with-pandas-dataframes/)
 
-            -   Note: ATR value are available in most trading
-                software (e.g.
-                [Trading View](https://www.tradingview.com/support/solutions/43000501823-average-true-range-atr/))
+           -   Note: ATR value are available in most trading
+               software (e.g.
+               [Trading View](https://www.tradingview.com/support/solutions/43000501823-average-true-range-atr/))
 
-        -   C = Result-Adjusted Amount of Capital
+       -   C = Result-Adjusted Amount of Capital
 
-            -   Aim = Make trader to be more aggressive
-                (conservative) when they are winning (losing)
+           -   Aim = Make trader to be more aggressive
+               (conservative) when they are winning (losing)
 
-            -   Account size change will be 2x
+           -   Account size change will be 2x
 
-                -   Account = 1,000,000 and down 10% (100,000),
-                    trader will proceed as if their account is now
-                    1,000,000 -- 2x100,000 = 800,000 (actually
-                    amount is 900,000)
+               -   Account = 1,000,000 and down 10% (100,000),
+                   trader will proceed as if their account is now
+                   1,000,000 -- 2x100,000 = 800,000 (actually
+                   amount is 900,000)
 
-                -   Account = 1,000,000 and up 10% (100,000), trader
-                    will proceed as if their account is now
-                    1,000,000 + 2x100,000 = 1200,000 (actually
-                    amount is 1,100,000)
+               -   Account = 1,000,000 and up 10% (100,000), trader
+                   will proceed as if their account is now
+                   1,000,000 + 2x100,000 = 1200,000 (actually
+                   amount is 1,100,000)
 
-            -   Account is adjusted for every 10% up / down
+           -   Account is adjusted for every 10% up / down
 
-    2.  Trade Entries & Exposure Adjustment
+   2.  Trade Entries & Exposure Adjustment
 
-        -   Trade Entries
+       -   Trade Entries
 
-            -   2 systems used, each based on Donchian Channel
-                breakout
+           -   2 systems used, each based on Donchian Channel
+               breakout
 
-            -   Breakout = Price exceed high / low of x days (x = 20
-                / 55)
+           -   Breakout = Price exceed high / low of x days (x = 20
+               / 55)
 
-            -   System 1 -- Price exceed (drop below) 20-day High
-                (Low) = Long (Short) 1 Unit
+           -   System 1 -- Price exceed (drop below) 20-day High
+               (Low) = Long (Short) 1 Unit
 
-            -   System 2 -- Price exceed (drop below) 55-day High
-                (Low) = Long (Short) 1 Unit
+           -   System 2 -- Price exceed (drop below) 55-day High
+               (Low) = Long (Short) 1 Unit
 
-        -   Exposure Adjustment -- Pyramiding
+       -   Exposure Adjustment -- Pyramiding
 
-            -   1 more unit is added when price move 0.5N in the
-                trend breakout direction
+           -   1 more unit is added when price move 0.5N in the
+               trend breakout direction
 
-            -   Continue until max position size is reached
+           -   Continue until max position size is reached
 
-    3.  Stop Loss & Profit Taking
+   3.  Stop Loss & Profit Taking
 
-        -   Stop Loss
+       -   Stop Loss
 
-            -   Initial Stop Loss = 2N away from entry price
+           -   Initial Stop Loss = 2N away from entry price
 
-            -   Trailing Stop Loss -- Move up stop loss ) 0.5N every
-                time adding 1 more Unit
+           -   Trailing Stop Loss -- Move up stop loss ) 0.5N every
+               time adding 1 more Unit
 
-        -   Profit Taking
+       -   Profit Taking
 
-            -   System 1 -- Exit Long (Short) position at 10-day low
-                (high)
+           -   System 1 -- Exit Long (Short) position at 10-day low
+               (high)
 
-            -   System 2 -- Exit Long (Short) position at 20-day low
-                (high)
+           -   System 2 -- Exit Long (Short) position at 20-day low
+               (high)
 
 ## Turtle Trading -- Backtest Implementation
 
 ### I.  Python Pre-requisites
 
-    1.  Python Programing Concepts & Tools
+   1.  Python Programing Concepts & Tools
 
-        -   Python 101
+       -   Python 101
 
-            -   Reference (Python-Specific):
-                [pythontutorial.net](https://www.pythontutorial.net/),
-                [pynative.com](https://pynative.com/),
-                [pythonbasics.org](https://pythonbasics.org/)
+           -   Reference (Python-Specific):
+               [pythontutorial.net](https://www.pythontutorial.net/),
+               [pynative.com](https://pynative.com/),
+               [pythonbasics.org](https://pythonbasics.org/)
 
-            -   Reference (Generic):
-                [studytonight](https://www.studytonight.com/python/),
-                [w3schools](https://www.w3schools.com/python/default.asp),
-                [javatpoint](https://www.javatpoint.com/python-tutorial),
-                [tutorialspoint](https://www.tutorialspoint.com/python3/index.htm)
+           -   Reference (Generic):
+               [studytonight](https://www.studytonight.com/python/),
+               [w3schools](https://www.w3schools.com/python/default.asp),
+               [javatpoint](https://www.javatpoint.com/python-tutorial),
+               [tutorialspoint](https://www.tutorialspoint.com/python3/index.htm)
 
-        -   Python 102
+       -   Python 102
 
-            -   Theoretical: [Python
-                OOP](https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf),
-                [Python Data Structure](https://intellipaat.com/mediaFiles/2019/02/Python-Data-structures-cheat-sheet.pdf?US)
+           -   Theoretical: [Python
+               OOP](https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf),
+               [Python Data Structure](https://intellipaat.com/mediaFiles/2019/02/Python-Data-structures-cheat-sheet.pdf?US)
 
-            -   Practical: [Python Database](https://pynative.com/python/databases/)
+           -   Practical: [Python Database](https://pynative.com/python/databases/)
 
-        -   Python Development Environment & Tools
+       -   Python Development Environment & Tools
 
-            -   VS Code:
-                [Guideline](https://adamtheautomator.com/visual-studio-code-tutorial/),
-                [Cheatsheet](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf),
-                [Reference](https://code.visualstudio.com/docs)
+           -   VS Code:
+               [Guideline](https://adamtheautomator.com/visual-studio-code-tutorial/),
+               [Cheatsheet](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf),
+               [Reference](https://code.visualstudio.com/docs)
 
-            -   Jupyter Notebooks: [Guideline 1](https://realpython.com/jupyter-notebook-introduction/),
-                [Guideline 2](https://www.datacamp.com/tutorial/tutorial-jupyter-notebook),
-                [Cheatsheet](https://miro.medium.com/v2/resize:fit:1400/1*totJoCc3l7BdeY-mEQ6HHQ.png),
-                [Reference](https://www.tutorialspoint.com/jupyter/index.htm)
+           -   Jupyter Notebooks: [Guideline 1](https://realpython.com/jupyter-notebook-introduction/),
+               [Guideline 2](https://www.datacamp.com/tutorial/tutorial-jupyter-notebook),
+               [Cheatsheet](https://miro.medium.com/v2/resize:fit:1400/1*totJoCc3l7BdeY-mEQ6HHQ.png),
+               [Reference](https://www.tutorialspoint.com/jupyter/index.htm)
 
-            -   JupyterLab:
-                [Guideline](https://towardsdatascience.com/getting-the-most-out-of-jupyter-lab-9b3198f88f2d?gi=e5cf49abd26f),
-                [Cheatsheet](https://blog.ja-ke.tech/assets/jupyterlab-shortcuts/Shortcuts.png),
-                [Reference](https://jupyterla*readthedocs.io/en/stable/)
+           -   JupyterLab:
+               [Guideline](https://towardsdatascience.com/getting-the-most-out-of-jupyter-lab-9b3198f88f2d?gi=e5cf49abd26f),
+               [Cheatsheet](https://blog.ja-ke.tech/assets/jupyterlab-shortcuts/Shortcuts.png),
+               [Reference](https://jupyterla*readthedocs.io/en/stable/)
 
-    2.  Python Libraries
+   2.  Python Libraries
 
-        -   Data Manipulation
+       -   Data Manipulation
 
-            -   numpy:
-                [Manual](https://numpy.org/doc/stable/index.html),
-                [Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf),
-                [Reference](https://www.studytonight.com/numpy/)
+           -   numpy:
+               [Manual](https://numpy.org/doc/stable/index.html),
+               [Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf),
+               [Reference](https://www.studytonight.com/numpy/)
 
-            -   pandas:
-                [Manual](https://pandas.pydat*org/pandas-docs/stable/index.html),
-                [Cheatsheet](https://www.javatpoint.com/pandas-cheat-sheet),
-                [Reference](https://www.studytonight.com/pandas/)
+           -   pandas:
+               [Manual](https://pandas.pydat*org/pandas-docs/stable/index.html),
+               [Cheatsheet](https://www.javatpoint.com/pandas-cheat-sheet),
+               [Reference](https://www.studytonight.com/pandas/)
 
-        -   Data Visualization
+       -   Data Visualization
 
-            -   matplotlib:
-                [Manual](https://matplotli*org/stable/index.html),
-                [Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf),
-                [Reference](https://www.studytonight.com/matplotlib/)
+           -   matplotlib:
+               [Manual](https://matplotli*org/stable/index.html),
+               [Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf),
+               [Reference](https://www.studytonight.com/matplotlib/)
 
-            -   seaborn:
-                [Manual](https://seaborn.pydat*org/index.html),
-                [Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Seaborn_Cheat_Sheet.pdf),
-                [Reference](https://www.tutorialspoint.com/seaborn/index.htm)
+           -   seaborn:
+               [Manual](https://seaborn.pydat*org/index.html),
+               [Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Seaborn_Cheat_Sheet.pdf),
+               [Reference](https://www.tutorialspoint.com/seaborn/index.htm)
 
-        -   Financial Data:
+       -   Financial Data:
 
-            -   pandas-datareader:
-                [Review](https://thecleverprogrammer.com/2021/03/22/pandas-datareader-using-python-tutorial/),
-                [Main Page](https://githu*com/pydata/pandas-datareader),
-                [Reference](https://buildmedi*readthedocs.org/media/pdf/pandas-datareader/latest/pandas-datareader.pdf)
+           -   pandas-datareader:
+               [Review](https://thecleverprogrammer.com/2021/03/22/pandas-datareader-using-python-tutorial/),
+               [Main Page](https://githu*com/pydata/pandas-datareader),
+               [Reference](https://buildmedi*readthedocs.org/media/pdf/pandas-datareader/latest/pandas-datareader.pdf)
 
-            -   yfinance:
-                [Review](https://algotrading101.com/learn/yfinance-guide/),
-                [Main Page](https://aroussi.com/post/python-yahoo-finance),
-                [Reference](https://pypi.org/project/yfinance/)
+           -   yfinance:
+               [Review](https://algotrading101.com/learn/yfinance-guide/),
+               [Main Page](https://aroussi.com/post/python-yahoo-finance),
+               [Reference](https://pypi.org/project/yfinance/)
 
 ### II.  Backtest Settings & Results
 
-    1.  Backtest Settings
+   1.  Backtest Settings
 
-        -   High Level Overview
+       -   High Level Overview
 
-            -   Use both System 1 and System 2 to get breakout (if
-                any)
+           -   Use both System 1 and System 2 to get breakout (if
+               any)
 
-            -   Ticker followed: SPY, QQQ, TLT, GLD, KWEB, XLE, XLI,
-                XLB, XLF, XLRE
+           -   Ticker followed: SPY, QQQ, TLT, GLD, KWEB, XLE, XLI,
+               XLB, XLF, XLRE
 
-            -   System is backtested from 01/01/2000 to 31/03/2023
+           -   System is backtested from 01/01/2000 to 31/03/2023
 
-            -   Dividends were not included.
+           -   Dividends were not included.
 
-        -   Notes
+       -   Notes
 
-            -   For System 1, ignore the breakout if the last
-                breakout led to a winning trade
+           -   For System 1, ignore the breakout if the last
+               breakout led to a winning trade
 
-            -   Capital is split 50:50 between System 1 and System 2
+           -   Capital is split 50:50 between System 1 and System 2
 
-    2.  Backtest Results
+   2.  Backtest Results
 
 > ![](media/image1.png){width="5.409159011373578in"
 > height="3.5976640419947508in"}
@@ -278,19 +278,19 @@ This is a beginner's guideline for using Python to backtest Turtle Trading (or a
 
 -   Key Observations
 
-    -   Turtle Trading outperform SPY from 2000-2010, but underperform
-        from 2010-2023
+   -   Turtle Trading outperform SPY from 2000-2010, but underperform
+       from 2010-2023
 
-    -   Turtle Trading have much lower volatility & maximum drawdown
+   -   Turtle Trading have much lower volatility & maximum drawdown
 
-    -   "Fundamentalist" may argue that the FED's QE have a great effect
-        in boosting the return of SPY from 2010 onwards
+   -   "Fundamentalist" may argue that the FED's QE have a great effect
+       in boosting the return of SPY from 2010 onwards
 
 -   Further Analysis / Fine Tune
 
-    -   Tickers to track can include other individual stocks / ETF
+   -   Tickers to track can include other individual stocks / ETF
 
-    -   Fundamental Analysis can be incorporated to select better
-        candidates
+   -   Fundamental Analysis can be incorporated to select better
+       candidates
 
-    -   System parameters can be adjusted and observe performance
+   -   System parameters can be adjusted and observe performance
